@@ -1,0 +1,43 @@
+package main
+
+templ index() {
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://unpkg.com/htmx.org@2.0.4"
+		integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/static/_reset.css" />
+	<link rel="stylesheet" href="/static/index.css" />
+</head>
+
+<body>
+	<section>
+		<h1>Your turn</h1>
+		<button>left arrow</button>
+		<button>right arrow</button>
+		<div></div>
+		<form hx-post="/send" hx-target="previous" hx-swap="beforeend" hx-on::after-request="clearInput()">
+			<input id="word-input" name="word-input" type="text" placeholder="Type your next word" />
+		</form>
+	</section>
+
+	<aside>
+		<h1>Player List</h1>
+		<h2>1. Timmy</h2>
+		<h2>2. Tommy</h2>
+	</aside>
+</body>
+
+<script>
+	function clearInput() {
+		document.getElementById('word-input').value = '';
+	}
+</script>
+
+</html>
+}

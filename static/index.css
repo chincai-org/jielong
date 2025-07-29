@@ -1,0 +1,8 @@
+html {
+	color-scheme: dark light;
+}
+
+body {
+	display: grid;
+	grid-template-columns: 1fr 20rem;
+}
