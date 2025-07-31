@@ -6,3 +6,42 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 20rem;
 }
+
+aside {
+	background-color: hsl(0 0% 20%);
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	& > * {
+		margin: .25rem;
+	}
+}
+
+button {
+	border: none;
+	cursor: pointer;
+}
+
+#word-display {
+	display: flex;
+	background-color: red;
+	height: 3rem;
+	width: 6rem;
+
+	& > * {
+		margin: .25rem;
+	}
+}
+
+#word-interactor {
+	display: flex;
+
+	& > * {
+		margin: .25rem;
+	}
+}

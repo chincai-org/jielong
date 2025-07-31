@@ -18,10 +18,30 @@ templ index() {
 <body>
 	<section>
 		<h1>Your turn</h1>
-		<button>left arrow</button>
-		<button>right arrow</button>
-		<div></div>
-		<form hx-post="/send" hx-target="previous" hx-swap="beforeend" hx-on::after-request="clearInput()">
+		<div id="word-interactor">
+			<button>
+				<svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="3rem"
+					viewBox="-19.04 0 75.803 75.803">
+					<g data-name="Group 64">
+						<path fill="currentColor"
+							d="M36.231 0a1.5 1.5 0 0 1 1.06 2.561L3.735 36.121a2.528 2.528 0 0 0 0 3.564l33.556 33.558a1.5 1.5 0 0 1-2.121 2.121L1.618 41.806a5.527 5.527 0 0 1 0-7.807L35.174.44A1.5 1.5 0 0 1 36.231 0Z"
+							data-name="Path 56" />
+					</g>
+				</svg>
+			</button>
+			<div id="word-display"></div>
+			<button>
+				<svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="3rem"
+					viewBox="-19.04 0 75.804 75.804">
+					<g data-name="Group 65">
+						<path fill="currentColor"
+							d="M1.5 75.804a1.5 1.5 0 0 1-1.061-2.561l33.557-33.56a2.53 2.53 0 0 0 0-3.564L.439 2.561A1.5 1.5 0 0 1 2.561.44l33.556 33.558a5.53 5.53 0 0 1 0 7.807L2.56 75.365a1.5 1.5 0 0 1-1.06.439Z"
+							data-name="Path 57" />
+					</g>
+				</svg>
+			</button>
+		</div>
+		<form hx-post="/send" hx-target="#word-display" hx-swap="beforeend" hx-on::after-request="clearInput()">
 			<input id="word-input" name="word-input" type="text" placeholder="Type your next word" />
 		</form>
 	</section>
