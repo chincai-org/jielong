@@ -47,10 +47,10 @@ button {
 	display: flex;
 	border: 3px solid white;
 	border-radius: 1rem;
-	font-size: 4rem;
+	font-size: 2.5rem;
 	padding-inline: 1ch;
 	min-height: 8.3rem;
-	width: 13ch;
+	width: 52ch;
 	align-items: center;
 	justify-content: center;
 	gap: 1rem;
@@ -75,6 +75,7 @@ button {
 .main__word-input {
 	font-size: 2rem;
 	text-align: center;
+	width: 50ch;
 }
 
 .menu {
