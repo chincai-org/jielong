@@ -27,7 +27,18 @@ button {
 	cursor: pointer;
 }
 
-#word-display {
+[role="tablist"] {
+	list-style: none;
+	display: flex;
+	gap: 1rem;
+}
+
+[aria-selected="true"] {
+	text-decoration-thickness: .25em;
+	text-underline-offset: .5em;
+}
+
+.main__word-display {
 	display: flex;
 	background-color: red;
 	height: 3rem;
@@ -38,10 +49,14 @@ button {
 	}
 }
 
-#word-interactor {
+.main__word-interactor {
 	display: flex;
 
 	& > * {
 		margin: .25rem;
 	}
+}
+
+.main__turn-display {
+	font-size: 7rem;
 }

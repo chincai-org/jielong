@@ -13,12 +13,13 @@ templ index() {
 		crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="/static/_reset.css" />
 	<link rel="stylesheet" href="/static/index.css" />
+	<script src="/static/index.js" defer></script>
 </head>
 
 <body>
-	<section>
-		<h1>Your turn</h1>
-		<div id="word-interactor">
+	<section class="main">
+		<h1 class="main__turn-display">Your turn</h1>
+		<div class="main__word-interactor">
 			<button>
 				<svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="3rem"
 					viewBox="-19.04 0 75.803 75.803">
@@ -29,7 +30,7 @@ templ index() {
 					</g>
 				</svg>
 			</button>
-			<div id="word-display"></div>
+			<div id="word-display" class="main__word-display"></div>
 			<button>
 				<svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="3rem"
 					viewBox="-19.04 0 75.804 75.804">
@@ -42,22 +43,30 @@ templ index() {
 			</button>
 		</div>
 		<form hx-post="/send" hx-target="#word-display" hx-swap="beforeend" hx-on::after-request="clearInput()">
-			<input id="word-input" name="word-input" type="text" placeholder="Type your next word" />
+			<input class="main__word-input" name="word-input" type="text"
+				placeholder="Type your next word" />
 		</form>
 	</section>
 
-	<aside>
-		<h1>Player List</h1>
-		<h2>1. Timmy</h2>
-		<h2>2. Tommy</h2>
+	<aside class="menu">
+		<div class="tabs-container">
+			<ul>
+				<li><a id="tab-1" href="#player-list">Player List</a></li>
+				<li><a id="tab-2" href="#chat">Chat</a></li>
+			</ul>
+			<div class="tabs__panels flow">
+				<div id="player-list" aria-labelledby="tab-1">
+					<h1>Player List</h1>
+					<h2>1. Timmy</h2>
+					<h2>2. Tommy</h2>
+				</div>
+				<div id="chat" aria-labelledby="tab-2">
+					<p>hi</p>
+				</div>
+			</div>
+		</div>
 	</aside>
 </body>
-
-<script>
-	function clearInput() {
-		document.getElementById('word-input').value = '';
-	}
-</script>
 
 </html>
 }
