@@ -21,7 +21,7 @@ templ index() {
 		<h1 class="main__turn-display">Your turn</h1>
 		<div class="main__word-interactor">
 			<button>
-				<svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="3rem"
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="3rem"
 					viewBox="-19.04 0 75.803 75.803">
 					<g data-name="Group 64">
 						<path fill="currentColor"
@@ -30,9 +30,9 @@ templ index() {
 					</g>
 				</svg>
 			</button>
-			<div id="word-display" class="main__word-display"></div>
+			<div id="main__word-display" class="main__word-display"></div>
 			<button>
-				<svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="3rem"
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="3rem"
 					viewBox="-19.04 0 75.804 75.804">
 					<g data-name="Group 65">
 						<path fill="currentColor"
@@ -42,8 +42,9 @@ templ index() {
 				</svg>
 			</button>
 		</div>
-		<form hx-post="/send" hx-target="#word-display" hx-swap="beforeend" hx-on::after-request="clearInput()">
-			<input class="main__word-input" name="word-input" type="text"
+		<form hx-post="/send" hx-target="#main__word-display" hx-swap="beforeend"
+			hx-on::after-request="clearInput()">
+			<input id="main__word-input" class="main__word-input" name="word-input" type="text"
 				placeholder="Type your next word" />
 		</form>
 	</section>
@@ -53,6 +54,7 @@ templ index() {
 			<ul>
 				<li><a id="tab-1" href="#player-list">Player List</a></li>
 				<li><a id="tab-2" href="#chat">Chat</a></li>
+				<li><a id="tab-3" href="#settings">Settings</a></li>
 			</ul>
 			<div class="tabs__panels flow">
 				<div id="player-list" aria-labelledby="tab-1">
@@ -63,10 +65,14 @@ templ index() {
 				<div id="chat" aria-labelledby="tab-2">
 					<p>hi</p>
 				</div>
+				<div id="settings" aria-labelledby="tab-3">
+					<p>settings</p>
+				</div>
 			</div>
 		</div>
 	</aside>
 </body>
 
 </html>
+
 }

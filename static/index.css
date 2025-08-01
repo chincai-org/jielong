@@ -7,11 +7,32 @@ body {
 	grid-template-columns: 1fr 20rem;
 }
 
-aside {
-	background-color: hsl(0 0% 20%);
+button {
+	border: none;
+	cursor: pointer;
 }
 
-section {
+[role="tablist"] {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	background-color: hsl(0 0% 10%);
+}
+
+[role="tab"] {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	font-size: 1.4rem;
+
+	&:has([aria-selected="true"]) {
+		background-color: hsl(0 0% 20%);
+	}
+}
+
+.main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -22,27 +43,17 @@ section {
 	}
 }
 
-button {
-	border: none;
-	cursor: pointer;
-}
-
-[role="tablist"] {
-	list-style: none;
-	display: flex;
-	gap: 1rem;
-}
-
-[aria-selected="true"] {
-	text-decoration-thickness: .25em;
-	text-underline-offset: .5em;
-}
-
 .main__word-display {
 	display: flex;
-	background-color: red;
-	height: 3rem;
-	width: 6rem;
+	border: 3px solid white;
+	border-radius: 1rem;
+	font-size: 4rem;
+	padding-inline: 1ch;
+	min-height: 8.3rem;
+	width: 13ch;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
 
 	& > * {
 		margin: .25rem;
@@ -59,4 +70,14 @@ button {
 
 .main__turn-display {
 	font-size: 7rem;
+}
+
+.main__word-input {
+	font-size: 2rem;
+	text-align: center;
+}
+
+.menu {
+	background-color: hsl(0 0% 20%);
+	font-size: 1.25rem;
 }

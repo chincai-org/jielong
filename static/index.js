@@ -6,7 +6,7 @@ const tabPanels = tabsContainer.querySelectorAll(".tabs__panels > div");
 tabsList.setAttribute("role", "tablist");
 
 tabsList.querySelectorAll("li").forEach(listItem => {
-	listItem.setAttribute("role", "presentation");
+	listItem.setAttribute("role", "tab");
 });
 
 tabButtons.forEach((tab, index) => {
@@ -51,5 +51,5 @@ function switchTab(newTab) {
 }
 
 function clearInput() {
-	document.getElementById('word-input').value = '';
+	document.getElementById('main__word-input').value = '';
 }
